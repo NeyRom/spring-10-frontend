@@ -1,5 +1,8 @@
 # spring-rest-ui
 
+## Project description
+Frontend client on Vue.JS with basic CRUD functionality
+
 ## Project setup
 ```
 npm install
