@@ -18,11 +18,17 @@
                     <b-tr v-for="(book, index) in books" :key="index">
                         <b-td>{{index + 1}}</b-td>
                         <b-td>{{book.title}}</b-td>
-                        <b-td>{{book.author.firstName}} {{book.author.lastName}}</b-td>
+                        <b-td><span v-if="book.author != null">{{book.author.firstName}} {{book.author.lastName}}</span></b-td>
                         <b-td>{{book.isbn}}</b-td>
                         <b-td>{{book.releaseDate}}</b-td>
-                        <b-td>{{book.genres}}</b-td>
-                        <b-td><router-link to="/book/">{{book.id}}</router-link></b-td>
+                        <b-td>
+                            <span v-for="genre in book.genres" :key="genre.title">{{genre.title}} </span>
+                        </b-td>
+                        <b-td><router-link :to="{
+                            name: 'book-detail',
+                            params: { book: book, id: book.id }
+                        }">Подробности
+                        </router-link></b-td>
                     </b-tr>
                 </b-tbody>
             </b-table-simple>

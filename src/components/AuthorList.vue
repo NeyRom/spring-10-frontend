@@ -14,7 +14,12 @@
                     <b-tr v-for="(author, index) in authors" :key="index">
                         <b-td>{{index + 1}}</b-td>
                         <b-td>{{author.firstName}} {{author.lastName}}</b-td>
-                        <b-td><router-link to="/author/">{{author.id}}</router-link></b-td>
+                        <b-td><router-link :to="{
+                            name: 'author-detail',
+                            params: { author: author, id: author.id }
+                        }">
+                        Подробности
+                        </router-link></b-td>
                     </b-tr>
                 </b-tbody>
             </b-table-simple>

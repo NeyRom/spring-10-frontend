@@ -1,9 +1,15 @@
 <template>
   <b-container id="app">
-    <b-row class="justify-content-md-center">
-      <router-link class="btn btn-primary" to="/book">Книги</router-link>
-      <router-link class="btn btn-primary" to="/author">Авторы</router-link>
-    </b-row>
+    <b-navbar type="light" variant="light">
+      <b-navbar-brand href="#">BookStore</b-navbar-brand>
+      <b-navbar-nav>
+        <b-nav-item to="/book">Книги</b-nav-item>  
+        <b-nav-item to="/author">Авторы</b-nav-item>
+      </b-navbar-nav>
+      <b-navbar-nav class="ml-auto">
+        <b-button size="sm" to="/book/new" type="submit">Добавить книгу</b-button>
+      </b-navbar-nav>
+    </b-navbar>
     <b-row>
       <router-view/>
     </b-row>
