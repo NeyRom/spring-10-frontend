@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <b-container id="app">
+    <b-navbar type="light" variant="light">
+      <b-navbar-brand href="#">BookStore</b-navbar-brand>
+      <b-navbar-nav>
+        <b-nav-item to="/book">Книги</b-nav-item>  
+        <b-nav-item to="/author">Авторы</b-nav-item>
+      </b-navbar-nav>
+      <b-navbar-nav class="ml-auto">
+        <b-button size="sm" to="/book/new" type="submit">Добавить книгу</b-button>
+      </b-navbar-nav>
+    </b-navbar>
+    <b-row>
+      <router-view/>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
